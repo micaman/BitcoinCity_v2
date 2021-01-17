@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="Pedro Marrucho">
+		<link rel="icon" href="./assets/favicon.ico">
+		<title>BitcoinCity v2</title>
+		<!-- Bootstrap core CSS -->
+		<link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link href="./assets/css/album.css" rel="stylesheet">
+		<style>
+ /* The animation code */
+@keyframes example {
+  0%  {background-color: #222;}
+  75%   {background-color: white;}
+}
+
+/* The element to apply the animation to */
+.an {
+  animation-name: example;
+  animation-duration: 1s;
+} 
+		</style>
+	</head>
+	<body onload="go()">
+		<header>
+			<div class="collapse bg-dark" id="navbarHeader">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-8 col-md-7 py-4">
+							<h4 class="text-white">About</h4>
+							<p class="text-muted">Just another attempt to see what bitcoin users are up to.</p>
+							<h4 class="text-white">Donations</h4>
+							<p class="text-muted">1KrEcQKikS2bSizWmtY2eSBtCrbDTtQnUw</p>
+							<img src="http://bitcoincity.info/1KrEcQKikS2bSizWmtY2eSBtCrbDTtQnUw.png" alt="1KrEcQKikS2bSizWmtY2eSBtCrbDTtQnUw" class="img-thumbnail">
+						</div>
+						<div class="col-sm-4 offset-md-1 py-4">
+							<h4 class="text-white">Contact</h4>
+							<ul class="list-unstyled">
+								<li><a href="https://twitter.com/poucatreta" class="text-white">Follow on Twitter</a></li>
+								<li><a href="mailto:bitcoincityinfo@gmail.com" class="text-white">Email me</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navbar navbar-dark bg-dark box-shadow">
+				<div class="container d-flex justify-content-between">
+					<a href="#" class="navbar-brand d-flex align-items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+						<strong>BitcoinCity v2</strong>
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main role="main">
+
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Live</h1>
+					<div class="row" id="cards" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Most inputs + outputs</h1>
+					<div class="row" id="recsIOs" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Top Size</h1>
+					<div class="row" id="recsSize" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Top Fee</h1>
+					<div class="row" id="recsFee" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Top Amount</h1>
+					<div class="row" id="recsBtc" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Most script types</h1>
+					<div class="row" id="recsSts" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Least inputs + outputs</h1>
+					<div class="row" id="recsIOs2" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Smallest Size</h1>
+					<div class="row" id="recsSize2" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Smallest Fee</h1>
+					<div class="row" id="recsFee2" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Smallest Amount</h1>
+					<div class="row" id="recsBtc2" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+			<div class="album py-5 bg-light">
+				<div class="container">
+					<h1 class="jumbotron-heading">Least script types</h1>
+					<div class="row" id="recsSts2" style="overflow-anchor='none'">
+					</div>
+				</div>
+			</div>
+
+		</main>
+		<footer class="text-muted">
+			<div class="container">
+				<p class="float-right">
+					<a href="#">Back to top</a>
+				</p>
+			</div>
+		</footer>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src=".assets/js/jquery-slim.min.js"><\/script>')</script>
+		<script src="./assets/js/popper.min.js"></script>
+		<script src="./assets/js/bootstrap.min.js"></script>
+		<script src="./assets/js/holder.min.js"></script>
+		<script src="./assets/js/isomer.min.js"></script>
+		<script src="./assets/js/scriptviz.js"></script>
+	</body>
+</html>
